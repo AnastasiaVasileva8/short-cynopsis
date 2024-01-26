@@ -198,13 +198,14 @@ Git сообщит об этом с помощью статуса modified: фа
 
 ## Схема жизненного цикла файла в git
 
+
 ```mermaid
-graph LR;
-untracked -- "git add" --> staged(в списке на коммит) + tracked;
-staged(в списке на коммит) + tracked -- "git commit" --> tracked;
+graph LR
+untracked -- "git add" --> staged;
+staged -- "git commit" --> tracked;
 tracked -- "изменения" --> modified;
-modified -- "git add" --> staged(в списке на коммит) + tracked;
-staged(в списке на коммит) + tracked -- "изменения" --> modified;
+modified -- "git add" --> staged;
+staged -- "изменения" --> modified;
 ```
 
 ---
